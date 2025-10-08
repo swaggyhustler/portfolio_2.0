@@ -28,7 +28,7 @@ const items = [
   {
     id: 4,
     img: "https://plus.unsplash.com/premium_photo-1670601440146-3b33dfcd7e17?q=80&w=1238&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Wallet Watch",
+    title: "Food Recommendation",
     desc: `A smart web app built with Node.js, Express.js, EJS, and Axios that recommends food based on a user’s location and real-time weather. It integrates a Weather API to fetch temperature data and another API to generate contextual food suggestions tailored to local climate conditions, offering a personalized and dynamic user experience.`,
     url: "https://github.com/swaggyhustler/food-recommendation-system"
   }
