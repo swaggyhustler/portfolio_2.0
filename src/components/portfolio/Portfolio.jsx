@@ -1,49 +1,37 @@
 /* eslint-disable react/prop-types */
-import {useRef} from "react";
+import { useRef } from "react";
 import "./portfolio.scss";
-import {motion, useScroll, useSpring, useTransform} from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
-const items=[
-    {
-        id: 1,
-        img: "https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        title: "Travel Tracker",
-        desc: `This application allows multiple users to locate countries that they have visited, highlight them according to
-         the input of the user. It leverages the extensive use of Database and EJS to dynamically fetch and display the output
-          to the user. Multiple users are able to log their details and access the data related to the each user on the single 
-          click of a button on the Website. The main challenge that I've faced during building this project involved in managing 
-          the database for each user.`,
-        url: "https://github.com/swaggyhustler/travel-tracker"
-    },
-    {
-        id: 2,
-        img: "https://images.pexels.com/photos/936611/pexels-photo-936611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        title: "Healthy Diet",
-        desc: `This application prompt users for their details regarding health parameters and personal interests of food and generates food
-              suggestions for the input. It leverages the use of Python Framework for Web Development called Flask which is considered to be the
-              light weighted Framework for Web Development, and also the usage of API's (Open AI API) for the dynamic suggestions.
-              It also consist of CSS Framework called Bootstrap, for the ease of styling and layout of the website. The main challenge that I have
-              faced during development of this project was mainly integration of the Public API to the website.`,
-        url: "https://github.com/swaggyhustler/healthy-diet"
-    },
-    {
-        id: 3,
-        img: "https://images.pexels.com/photos/733856/pexels-photo-733856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        title: "Blogging Application",
-        desc: `This is application that enables users to create the blog of their choice, prompting the Title, Author and the Content related to the blog
-              to be posted. User will be able to list down the number of blogs the has been posted in the Explore section of the application. It
-              demonstrates the extensive use of EJS (Embedded Javascript) and it's usage in building Dynamic Web Applications.`,
-        url: "https://github.com/swaggyhustler/blog-application"
-    },
-    {
-        id: 4,
-        img: "https://images.pexels.com/photos/5849577/pexels-photo-5849577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        title: "Wallet Watch",
-        desc: `This is an application where the user will be able to track their expenses and log their all the information about the monetary
-              transactions. It uses the MongoDB Atlas (Cloud Storage) to persist the data and ensuring the availability upto 99.99%. It also
-              leverages the extensive use of React Framework for building frontend of the application.`,
-        url: "https://github.com/swaggyhustler/WalletWatch"
-    }
+const items = [
+  {
+    id: 1,
+    img: "https://plus.unsplash.com/premium_photo-1661306409866-18a31687d71b?q=80&w=1112&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Auto ResQ",
+    desc: `AutoResQ is a web app that connects stranded motorists with nearby towing and repair services in real time. It features live GPS tracking, instant service matching, and secure authentication for quick, reliable roadside help. Built using React, Node.js, and MongoDB, and integrated with the Google Maps API, it ensures a seamless experience from request to rescue. Deployed via Cloudflare Workers, AutoResQ offers a fast, scalable, and user-friendly solution for on-road emergencies.`,
+    url: "https://github.com/swaggyhustler/autoresq"
+  },
+  {
+    id: 2,
+    img: "https://plus.unsplash.com/premium_photo-1677995700941-100976883af7?q=80&w=1223&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Swift Shoppers",
+    desc: `Swift Shoppers is a web app that simplifies local online shopping by connecting users to nearby stores. Using Mappls GeoLocation API, it fetches the nearest shops, enabling users to browse products, manage carts, and place orders seamlessly. Built with React, Node.js, and MongoDB, it offers real-time inventory updates, secure authentication, and an intuitive interface for a fast and personalized shopping experience.`,
+    url: "https://github.com/swaggyhustler/hyper-local-ecommerce-application"
+  },
+  {
+    id: 3,
+    img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Student Genie",
+    desc: `StudentGenie is an intelligent web app that enhances learning through AI-driven content generation. Built with Django REST Framework and React, it integrates machine learning models and LLMs to answer user queries and generate quizzes from video transcripts and PDFs. Developed collaboratively in a team of three, it features a robust backend, seamless frontend integration, and smart automation to make studying more interactive and personalized.`,
+    url: "https://github.com/swaggyhustler/StudentGenie"
+  },
+  {
+    id: 4,
+    img: "https://plus.unsplash.com/premium_photo-1670601440146-3b33dfcd7e17?q=80&w=1238&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Wallet Watch",
+    desc: `A smart web app built with Node.js, Express.js, EJS, and Axios that recommends food based on a user’s location and real-time weather. It integrates a Weather API to fetch temperature data and another API to generate contextual food suggestions tailored to local climate conditions, offering a personalized and dynamic user experience.`,
+    url: "https://github.com/swaggyhustler/food-recommendation-system"
+  }
 ];
 
 const Single = ({ item }) => {
@@ -62,7 +50,7 @@ const Single = ({ item }) => {
           <div className="imageContainer" ref={ref}>
             <img src={item.img} alt="" />
           </div>
-          <motion.div className="textContainer" style={{y}}>
+          <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
             <a href={item.url}>See Demo</a>
