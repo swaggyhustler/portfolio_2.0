@@ -31,6 +31,7 @@ const Contact=()=>{
         try{
             await emailjs.sendForm('service_8fs7a2e', 'template_8c9nvqs', formRef.current, 'RkgWDuqgykR2xT5FP');
             setSuccess(true);
+            formRef.current.reset();
         }catch(error){
             setError(false);
         }
